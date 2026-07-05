@@ -21,4 +21,4 @@ trap - EXIT
 # פריסה ל-Firebase
 firebase deploy --only hosting
 
-echo "✅ נפרס: https://tamer-hamdan-site.web.app"
+echo "✅ נפרס: https://cpasgt-site.web.app"

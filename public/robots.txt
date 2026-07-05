@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tamer-hamdan-site.web.app/sitemap.xml
+Sitemap: https://cpasgt.com/sitemap.xml
