@@ -26,8 +26,8 @@ RELEVANT_TOPICS = {"מס הכנסה", 'מע"מ', "מע״מ", "מס ערך מוס
 RELEVANT_KEYWORDS = ["דוח שנתי", "דוחות שנתיים", "דו\"ח שנתי", "חקיקה",
                      "תיקון לחוק", "תיקון חוק", "החזר מס", "החזרי מס",
                      "ניכויים", "הצהרת הון", "שומה"]
-# Items to always drop (job postings, tenders)
-EXCLUDE_KEYWORDS = ["מכרז פומבי", "למשרת", "מכרז מספר", "דרושים"]
+# Items to always drop (job postings, tenders) — "מכרז" also matches "מכרזים"
+EXCLUDE_KEYWORDS = ["מכרז", "למשרת", "דרושים"]
 
 MAX_ITEMS = 12
 
