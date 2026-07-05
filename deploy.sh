@@ -13,6 +13,7 @@ git diff --cached --quiet || git commit -m "$MSG"
 # דחיפה ל-GitHub עם החשבון של תאמר, והחזרת החשבון של סאמר מיד אחרי
 gh auth switch -h github.com -u tamerh-sys
 trap 'gh auth switch -h github.com -u samer92safe-ctrl' EXIT
+git pull --rebase origin main
 git push
 gh auth switch -h github.com -u samer92safe-ctrl
 trap - EXIT
