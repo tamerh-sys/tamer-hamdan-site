@@ -1,0 +1,33 @@
+name: Update tax feed
+
+on:
+  schedule:
+    - cron: '30 3 * * *'   # 06:30 בבוקר שעון ישראל
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Fetch latest Tax Authority publications
+        run: python3 scripts/fetch_updates.py
+
+      - name: Commit updated feed if changed
+        run: |
+          git config user.name "tax-feed-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add public/data/updates.json
+          if git diff --cached --quiet; then
+            echo "No changes in feed."
+          else
+            git commit -m "עדכון פיד רשות המסים $(date -u +%Y-%m-%d)"
+            git push
+          fi
